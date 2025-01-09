@@ -46,10 +46,21 @@
         <label for="faaliyet-alani">Faaliyet Alanı:</label>
         <select id="faaliyet-alani">
             <option value="">-- Seçiniz --</option>
-            <option value="ilkyardim">İlkyardım Hizmetleri</option>
-            <option value="egitim">Eğitim Hizmetleri</option>
-            <option value="teknik">Teknik Kontroller</option>
-            <option value="danismanlik">Danışmanlık Hizmetleri</option>
+            <option value="OSGB">OSGB</option>
+            <option value="İLKYARDIM EĞİTİM MERKEZİ">İLKYARDIM EĞİTİM MERKEZİ</option>
+            <option value="MOBİL ARAÇ">MOBİL ARAÇ</option>
+            <option value="AMBULANS HİZMETLERİ">AMBULANS HİZMETLERİ</option>
+            <option value="SABİT TIBBİ TETKİK MEKANI">SABİT TIBBİ TETKİK MEKANI</option>
+            <option value="MYK BELGELENDİRME">MYK BELGELENDİRME</option>
+            <option value="TÜM MESLEKİ EĞİTİMLER">TÜM MESLEKİ EĞİTİMLER</option>
+            <option value="KAZA ARAŞTIRMA VE KÖK-NEDEN ANALİZİ EĞİTİMİ">KAZA ARAŞTIRMA VE KÖK-NEDEN ANALİZİ EĞİTİMİ</option>
+            <option value="YÜKSEKTE ÇALIŞMA EĞİTİMİ">YÜKSEKTE ÇALIŞMA EĞİTİMİ</option>
+            <option value="YANGIN EĞİTİMİ VE TATBİKATI">YANGIN EĞİTİMİ VE TATBİKATI</option>
+            <option value="IOSH MANAGING OCCUPATIONAL HEALTH AND WELLBEING">IOSH MANAGING OCCUPATIONAL HEALTH AND WELLBEING</option>
+            <option value="RİSK DEĞERLENDİRME VE YÖNETİMİ">RİSK DEĞERLENDİRME VE YÖNETİMİ</option>
+            <option value="ÇEVRE YÖNETİMİ">ÇEVRE YÖNETİMİ</option>
+            <option value="MAKİNE KONTROLLERİ">MAKİNE KONTROLLERİ</option>
+            <option value="DANIŞMANLIK HİZMETLERİ">DANIŞMANLIK HİZMETLERİ</option>
         </select>
         <table id="bilgi-tablosu" class="hidden">
             <thead>
@@ -67,31 +78,901 @@
     </div>
 
     <script>
-        const data = {
-            "ilkyardim": [
-                {"firma": "TETKİK OSGB", "adres": "Yeşillik Cad. No:228-230 Kat:4 D:403, İzmir", "kisi": "Hakan Ferhatoğlu", "telefon": "0 532 488 22 17"},
-                {"firma": "ARKETİP OSGB", "adres": "1348 Sok. No:5/206, Konak, İzmir", "kisi": "Murat Can Erim", "telefon": "0 507 657 83 67"}
-            ],
-            "egitim": [
-                {"firma": "SARIZEYBEK BELGELENDİRME", "adres": "Gazi Bulvarı, İzmir", "kisi": "Mizgin Alpboğa", "telefon": "0 549 489 84 88"}
-            ],
-            "teknik": [
-                {"firma": "GÜÇBİRLİĞİ MÜHENDİSLİK", "adres": "Konak, İzmir", "kisi": "-", "telefon": "-"}
-            ],
-            "danismanlik": [
-                {"firma": "TETKİK DANIŞMANLIK", "adres": "Yeşillik Cad. No:228-230 Kat:4 D:403, İzmir", "kisi": "Hakan Ferhatoğlu", "telefon": "0 532 488 22 17"}
-            ]
-        };
+const data = {
+    "OSGB": [
+        {
+            "firma": "TETKİK OSGB/ İZMİR",
+            "adres": "Yeşillik Cad. No:228-230 Kat:4 D:403 , Karabağlar, İZMİR",
+            "kisi": "Hakan FERHATOĞLU",
+            "telefon": "0 532 488 22 17"
+        },
+        {
+            "firma": "TETKİK OSGB/GEBZE",
+            "adres": "Köşklü Çeşme Mahallesi 567. Sokak No:15/B , Gebze, KOCAELİ",
+            "kisi": "Hakan FERHATOĞLU",
+            "telefon": "0 532 488 22 17"
+        },
+        {
+            "firma": "TETKİK OSGB/ ARTVİN",
+            "adres": "Yenimahalle 19 Mayıs Cad. Yeniçeri Apt. No:55/4, Merkez, ARTVİN",
+            "kisi": "Hakan FERHATOĞLU",
+            "telefon": "0 532 488 22 17"
+        },
+        {
+            "firma": "ARKETİP OSGB",
+            "adres": "1348 Sok. No:5/206 , Konak, İZMİR",
+            "kisi": "Murat Can Erim",
+            "telefon": "0 507 657 83 67"
+        },
+        {
+            "firma": "BİR İZMİR OSGB",
+            "adres": "MERSİNLİ MAHALLESİ 1580/1 SOK NO:3 MERSİNLİ-KONAK, KONAK, İZMİR",
+            "kisi": "FİGEN AYDIN",
+            "telefon": "0 549 352 40 10 "
+        },
+        {
+            "firma": "BİR EGE OSGB",
+            "adres": "ATATÜRK MAHALLESİ İNÖNÜ BULVARI SAFİR OFİS NO:30 K:1 D:1, ALİAĞA, İZMİR",
+            "kisi": "FİGEN AYDIN",
+            "telefon": "0 549 352 40 10"
+        },
+        {
+            "firma": "SÖZ-1 OSGB",
+            "adres": "TOPÇU ASIM MAH. 3519 SK. NO.3B YUNUSEMRE/MANİSA, YUNUSEMRE, MANİSA",
+            "kisi": "KAMİL EMRE TÜRKARSLAN",
+            "telefon": "0 555 698 25 55"
+        },
+        {
+            "firma": "SÖZ-1 OSGB KÜTAHYA",
+            "adres": "TOPÇU ASIM MAH. 3519 SK. NO.3B YUNUSEMRE/MANİSA, MERKEZ, KÜTAHYA",
+            "kisi": "HÜSEYİN EMRAH CAN",
+            "telefon": "0 505 700 15 95"
+        },
+        {
+            "firma": "TİRE OSGB",
+            "adres": "İPEKÇİLER MH. ADLİYE MEYDANI NO:2/E-19, TİRE, İZMİR",
+            "kisi": "ABDULKADİR UĞURLU",
+            "telefon": "0535 202 81 88"
+        },
+        {
+            "firma": "EGELİ OSGB",
+            "adres": "Kazımdirik mah. 296/1 SK. NO:11/G, Bornova, İZMİR",
+            "kisi": "Emre AYAZ",
+            "telefon": "0 506 562 9260"
+        },
+        {
+            "firma": "HÜLYAM OSGB",
+            "adres": "KEÇİLİKÖY OSB MAH.MALAZGİRT CAD. NO:4, YUNUSEMRE, MANİSA",
+            "kisi": "AYŞEN YOLDAŞ- BEHİYE ÖDEK",
+            "telefon": "05543187661(AYŞEN) 05333186890(BEHİYE)"
+        },
+        {
+            "firma": "MENDERES OSGB",
+            "adres": "Efeler. Mah. Adnan Menderes Bulv. No:234/A, Didim, Aydın",
+            "kisi": "Ezgi Oğuz",
+            "telefon": "5346963612"
+        },
+        {
+            "firma": "İSG İZMİR OSGB",
+            "adres": "Bahriye Üçok Mahallaesi, Latife Hanım sokak, no:26/1, Karşıyaka, İZMİR",
+            "kisi": "Onur CERİT",
+            "telefon": "0 541 307 36 46"
+        },
+        {
+            "firma": "SARIZEYBEK OSGB",
+            "adres": "YENİ MH. YUNUS EMRE CADDESİ NO:21/3 09935 , Kuyucak, AYDIN",
+            "kisi": "Feyza DOMAÇ",
+            "telefon": "+90 554 947 85 56"
+        },
+        {
+            "firma": "TUĞRA OSGB",
+            "adres": "Binbaşı Reşat Bey mh Akçay Cd. No:16/3, Gaziemir, İZMİR",
+            "kisi": "Cengizhan ÖZCAN",
+            "telefon": "0 532 241 64 38"
+        }
+    ],
+    "İLKYARDIM EĞİTİM MERKEZİ": [
+        {
+            "firma": "TETKİK DANIŞMANLIK İLKYARDIM EĞİTİM MERKEZİ",
+            "adres": "Yeşillik Cad. No:228-230 Kat:4 D:403 , KARABAĞLAR, İZMİR",
+            "kisi": "-",
+            "telefon": "0 532 686 11 87"
+        },
+        {
+            "firma": "ÖZEL MOSB-MED İLKYARDIM EĞİTİM MERKEZİ",
+            "adres": "KEÇİLİKÖYOSB MAH.MALAZGİRT CAD. NO:4, YUNUSEMRE, MANİSA",
+            "kisi": "-",
+            "telefon": "0553 406 30 66"
+        },
+        {
+            "firma": "HIZIROĞLU EĞİTİM VE SAĞLIK HİZMETLERİ",
+            "adres": "Etiler 9 Eylül Meydanı Ahmet Başaran İş Merkezi No:12 Kat:4 Daire:408, KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "0 533 400 8684"
+        },
+        {
+            "firma": "SARIZEYBEK MESLEKİ YETERLİLİK BELGELENDİRME VE EĞİTİM HİZ. LTD. ŞTİ.",
+            "adres": "İsmet Kaptan Mh. Gazi Bulvarı Nersan İş Hanı No:108 K:2, KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "0 549 489 84 88"
+        },
+        {
+            "firma": "BİR İZMİR İLKYARDIM EĞİTİM MERKEZİ",
+            "adres": "ATATÜRK MAHALLESİ 414 SOKAK NO:3, ALİAĞA, İZMİR",
+            "kisi": "-",
+            "telefon": "0 549 352 40 10 "
+        }
+    ],
+    "MOBİL ARAÇ": [
+        {
+            "firma": "SÖZ-1 İŞ SAĞLIĞI VE İŞ GÜVENLİĞİ",
+            "adres": "TOPÇU ASIM MAH. 3519 SK. NO.3B YUNUSEMRE/MANİSA, YUNUSEMRE, MANİSA/İZMİR",
+            "kisi": "-",
+            "telefon": "0 542 830 41 07"
+        },
+        {
+            "firma": "TİRE OSGB",
+            "adres": "İPEKÇİLER MH. ADLİYE MEYDANI NO:2/E-19 , TİRE, İZMİR",
+            "kisi": "-",
+            "telefon": "0535 202 81 88"
+        },
+        {
+            "firma": "GAZİ MOBİL SAĞLIK HİZ. & OSGB",
+            "adres": "\nMimar Sinan Mh. 1421 Sk. No: 39/B, KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "0 532 238 1956"
+        },
+        {
+            "firma": "EGELİ ORTAK SAĞLIK GÜVENLİK BİRİMİ",
+            "adres": "Kazımdirik mah. 296/1 SK. NO:11/G, Bornova, İZMİR",
+            "kisi": "-",
+            "telefon": "0 530 516 8996"
+        },
+        {
+            "firma": "TUĞRA İŞ SAĞLIĞI VE İŞ GÜVENLİĞİ",
+            "adres": "Binbaşı Reşat Bey mh Akçay Cd. No:16/3, GAZİEMİR, İZMİR",
+            "kisi": "-",
+            "telefon": "5078121816"
+        }
+    ],
+    "AMBULANS HİZMETLERİ": [
+        {
+            "firma": "BİR İZMİR AMBULANS SERVİSİ(BİR İZMİR DENETİM EĞT. İNŞ. OTO. SAN. VE TİC. LTD. ŞTİ.)",
+            "adres": "MERSİNLİ MAHALLESİ 1580/1 SOK NO:3-B K:2 MERSİNLİ-KONAK, KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "0 549 352 40 14"
+        }
+    ],
+    "SABİT TIBBİ TETKİK MEKANI": [
+        {
+            "firma": "TETKİK İŞ GÜV. SABİT TIBBİ TETKİK MEKANI / İZMİR",
+            "adres": "Yeşillik Cad. No:228-230 Kat:4 D:424-425, Karabağlar, İZMİR",
+            "kisi": "-",
+            "telefon": "0 536 937 23 23"
+        },
+        {
+            "firma": "TETKİK İŞ GÜV. SABİT TIBBİ TETKİK MEKANI / ARTVİN",
+            "adres": "Yenimahalle 19 Mayıs Cad. Yeniçeri Apt. No:55/4, Merkez, ARTVİN",
+            "kisi": "-",
+            "telefon": "0 536 937 23 23"
+        },
+        {
+            "firma": "HÜLYAM OSGB",
+            "adres": "KEÇİLİKÖYOSB MAH.MALAZGİRT CAD. NO:4, YUNUSEMRE, MANİSA",
+            "kisi": "-",
+            "telefon": "5333186890"
+        },
+        {
+            "firma": "TİRE OSGB",
+            "adres": "İPEKÇİLER MH. ADLİYE MEYDANI NO:2/E-19 , TİRE, İZMİR",
+            "kisi": "-",
+            "telefon": "0535 202 81 88"
+        },
+        {
+            "firma": "EGELİ ORTAK SAĞLIK GÜVENLİK BİRİMİ",
+            "adres": "Kazımdirik mah. 296/1 SK. NO:11/G, BORNOVA, İZMİR",
+            "kisi": "-",
+            "telefon": "0 530 516 8996"
+        },
+        {
+            "firma": "GAZİ MOBİL SAĞLIK HİZ. & OSGB",
+            "adres": "\nMimar Sinan Mh. 1421 Sk. No: 39/B, KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "0 532 238 1956"
+        },
+        {
+            "firma": "GAZİ MOBİL SAĞLIK HİZ. & OSGB",
+            "adres": "İTOP OSB., MENDERES, İZMİR",
+            "kisi": "-",
+            "telefon": "0 532 238 1956"
+        },
+        {
+            "firma": "TUĞRA İŞ SAĞLIĞI VE İŞ GÜVENLİĞİ",
+            "adres": "Binbaşı Reşat Bey mh Akçay Cd. No:16/3, GAZİEMİR, İZMİR",
+            "kisi": "-",
+            "telefon": "5078121816"
+        },
+        {
+            "firma": "MENDERES OSGB",
+            "adres": "Efeler Mah. Adnan Menderes Bulv No:234/A, DİDİM, AYDIN",
+            "kisi": "-",
+            "telefon": "5458938348"
+        }
+    ],
+    "MYK BELGELENDİRME": [
+        {
+            "firma": "ACCREDİT BELGELENDİRME VE ÖZEL EĞİTİM HİZM. TİC. LTD. ŞTİ.",
+            "adres": "MERSİNLİ MAHALLESİ 1580/1 SOK NO:3-A K:1 MERSİNLİ-KONAK, MERSİNLİ, KONAK",
+            "kisi": "-",
+            "telefon": "0 533 158 62 60"
+        },
+        {
+            "firma": "İCONİC ENERJİ BİLİMLERİ MERKEZİ EĞİTİM HİZM. SAN. VE TİC. A.Ş.",
+            "adres": "İSMET KAPTAN MAH. 1372 SOK. NÜKET HANIM İŞ MERK. NO:15 D:52, KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "0 533 158 62 60"
+        }
+    ],
+    "TÜM MESLEKİ EĞİTİMLER": [
+        {
+            "firma": "TETKİK DANIŞMANLIK İLKYARDIM EĞİTİM MERKEZİ",
+            "adres": "Yeşillik Cad. No:228-230 Kat:4 D:403 , Karabağlar, İZMİR",
+            "kisi": "-",
+            "telefon": "0 532 488 22 17"
+        }
+    ],
+    "KAZA ARAŞTIRMA VE KÖK-NEDEN ANALİZİ EĞİTİMİ": [
+        {
+            "firma": "TETKİK DANIŞMANLIK İLKYARDIM EĞİTİM MERKEZİ",
+            "adres": "Yeşillik Cad. No:228-230 Kat:4 D:404, Karabağlar, İZMİR",
+            "kisi": "-",
+            "telefon": "1 532 488 22 17"
+        },
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1351 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "3 536 748 51 55"
+        }
+    ],
+    "YÜKSEKTE ÇALIŞMA EĞİTİMİ": [
+        {
+            "firma": "TETKİK DANIŞMANLIK İLKYARDIM EĞİTİM MERKEZİ",
+            "adres": "Yeşillik Cad. No:228-230 Kat:4 D:405, Karabağlar, İZMİR",
+            "kisi": "-",
+            "telefon": "2 532 488 22 17"
+        },
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1353 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "5 536 748 51 55"
+        },
+        {
+            "firma": "HÜLYAM OSGB",
+            "adres": "KEÇİLİKÖYOSB MAH.MALAZGİRT CAD. NO:4, YUNUSEMRE, MANİSA",
+            "kisi": "-",
+            "telefon": "0553 406 30 66"
+        }
+    ],
+    "YANGIN EĞİTİMİ VE TATBİKATI ": [
+        {
+            "firma": "TETKİK DANIŞMANLIK İLKYARDIM EĞİTİM MERKEZİ",
+            "adres": "Yeşillik Cad. No:228-230 Kat:4 D:406, Karabağlar, İZMİR",
+            "kisi": "-",
+            "telefon": "3 532 488 22 17"
+        },
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1362 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "14 536 748 51 55"
+        }
+    ],
+    "IOSH MANAGING OCCUPATIONAL HEALTH AND WELLBEING": [
+        {
+            "firma": "TETKİK DANIŞMANLIK İLKYARDIM EĞİTİM MERKEZİ",
+            "adres": "Yeşillik Cad. No:228-230 Kat:4 D:407, Karabağlar, İZMİR",
+            "kisi": "-",
+            "telefon": "4 532 488 22 17"
+        }
+    ],
+    "IOSH MANAGING SAFELY": [
+        {
+            "firma": "TETKİK DANIŞMANLIK İLKYARDIM EĞİTİM MERKEZİ",
+            "adres": "Yeşillik Cad. No:228-230 Kat:4 D:408, Karabağlar, İZMİR",
+            "kisi": "-",
+            "telefon": "5 532 488 22 17"
+        }
+    ],
+    "KİŞİSEL KORUYUCU DONANIM SEÇİMİ VE KULLANIMI EĞİTİMİ": [
+        {
+            "firma": "TETKİK DANIŞMANLIK İLKYARDIM EĞİTİM MERKEZİ",
+            "adres": "Yeşillik Cad. No:228-230 Kat:4 D:408, Karabağlar, İZMİR",
+            "kisi": "-",
+            "telefon": "5 532 488 22 17"
+        },
+        {
+            "firma": "TETKİK DANIŞMANLIK İLKYARDIM EĞİTİM MERKEZİ",
+            "adres": "Yeşillik Cad. No:228-230 Kat:4 D:410, Karabağlar, İZMİR",
+            "kisi": "-",
+            "telefon": "7 532 488 22 17"
+        },
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1358 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "10 536 748 51 55"
+        }
+    ],
+    "DAVRANIŞ ODAKLI İŞ GÜVENLİĞİ EĞİTİMİ": [
+        {
+            "firma": "TETKİK DANIŞMANLIK İLKYARDIM EĞİTİM MERKEZİ",
+            "adres": "Yeşillik Cad. No:228-230 Kat:4 D:409, Karabağlar, İZMİR",
+            "kisi": "-",
+            "telefon": "6 532 488 22 17"
+        },
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1367 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "19 536 748 51 55"
+        }
+    ],
+    "İş Sağlığı ve Güvenlİğİnde Lİderlİk ve Güvenlİk Kültürü Eğİtİmİ": [
+        {
+            "firma": "TETKİK DANIŞMANLIK İLKYARDIM EĞİTİM MERKEZİ",
+            "adres": "Yeşillik Cad. No:228-230 Kat:4 D:411, Karabağlar, İZMİR",
+            "kisi": "-",
+            "telefon": "8 532 488 22 17"
+        }
+    ],
+    "Rİsk Değerlendİrme ve Rİsk Yönetİmİ Eğİtİmİ": [
+        {
+            "firma": "TETKİK DANIŞMANLIK İLKYARDIM EĞİTİM MERKEZİ",
+            "adres": "Yeşillik Cad. No:228-230 Kat:4 D:412, Karabağlar, İZMİR",
+            "kisi": "-",
+            "telefon": "9 532 488 22 17"
+        }
+    ],
+    "Enerjİ İzolasyonu-Etİketleme Kİlİtleme (EKED) Eğİtİmİ": [
+        {
+            "firma": "TETKİK DANIŞMANLIK İLKYARDIM EĞİTİM MERKEZİ",
+            "adres": "Yeşillik Cad. No:228-230 Kat:4 D:413, Karabağlar, İZMİR",
+            "kisi": "-",
+            "telefon": "10 532 488 22 17"
+        }
+    ],
+    "Ergonomİ Rİsk Değerlendİrme Eğİtİmİ": [
+        {
+            "firma": "TETKİK DANIŞMANLIK İLKYARDIM EĞİTİM MERKEZİ",
+            "adres": "Yeşillik Cad. No:228-230 Kat:4 D:414, Karabağlar, İZMİR",
+            "kisi": "-",
+            "telefon": "11 532 488 22 17"
+        }
+    ],
+    "Süpervİzörler İçİn Sağlık ve İş Güvenlİğİ Eğİtİmİ": [
+        {
+            "firma": "TETKİK DANIŞMANLIK İLKYARDIM EĞİTİM MERKEZİ",
+            "adres": "Yeşillik Cad. No:228-230 Kat:4 D:415, Karabağlar, İZMİR",
+            "kisi": "-",
+            "telefon": "12 532 488 22 17"
+        },
+        {
+            "firma": "TETKİK DANIŞMANLIK İLKYARDIM EĞİTİM MERKEZİ",
+            "adres": "Yeşillik Cad. No:228-230 Kat:4 D:418, Karabağlar, İZMİR",
+            "kisi": "-",
+            "telefon": "15 532 488 22 17"
+        }
+    ],
+    "Acİl Durum ve Krİz Yönetİmİ Eğİtİmİ": [
+        {
+            "firma": "TETKİK DANIŞMANLIK İLKYARDIM EĞİTİM MERKEZİ",
+            "adres": "Yeşillik Cad. No:228-230 Kat:4 D:416, Karabağlar, İZMİR",
+            "kisi": "-",
+            "telefon": "13 532 488 22 17"
+        }
+    ],
+    "İş İznİ (Work PermIT) Eğİtİmİ": [
+        {
+            "firma": "TETKİK DANIŞMANLIK İLKYARDIM EĞİTİM MERKEZİ",
+            "adres": "Yeşillik Cad. No:228-230 Kat:4 D:417, Karabağlar, İZMİR",
+            "kisi": "-",
+            "telefon": "14 532 488 22 17"
+        }
+    ],
+    "ISO 31000 & ISO 31010 Kurumsal Rİsk Yönetİmİ ve Rİsk Değerlendİrme Teknİklerİ Eğİtİmİ": [
+        {
+            "firma": "TETKİK DANIŞMANLIK İLKYARDIM EĞİTİM MERKEZİ",
+            "adres": "Yeşillik Cad. No:228-230 Kat:4 D:419, Karabağlar, İZMİR",
+            "kisi": "-",
+            "telefon": "16 532 488 22 17"
+        }
+    ],
+    "Yönetİm Sİstemlerİ Eğİtİmlerİ": [
+        {
+            "firma": "TETKİK DANIŞMANLIK İLKYARDIM EĞİTİM MERKEZİ",
+            "adres": "Yeşillik Cad. No:228-230 Kat:4 D:420, Karabağlar, İZMİR",
+            "kisi": "-",
+            "telefon": "17 532 488 22 17"
+        }
+    ],
+    "RİSK DEĞERLENDİRME METOTLARI EĞİTİMİ": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1348 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "0 536 748 51 55"
+        }
+    ],
+    "TEHLİKE BELİRLEME VE RİSK DEĞERLENDİRME EĞİTİMİ": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1349 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "1 536 748 51 55"
+        }
+    ],
+    "ERGONOMİ EĞİTİMİ VE UYGULAMA ÖRNEKLERİ": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1350 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "2 536 748 51 55"
+        }
+    ],
+    "İNŞAAT İŞLERİNDE İSG EĞİTİMİ ": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1352 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "4 536 748 51 55"
+        }
+    ],
+    "ÇALIŞMA İZİN SİSTEMLERİ EĞİTİMİ": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1354 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "6 536 748 51 55"
+        }
+    ],
+    "MAKİNE EMNİYETİ EĞİTİMİ": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1355 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "7 536 748 51 55"
+        }
+    ],
+    "ETİKETLEME VE KİLİTLEME EĞİTİMİ": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1356 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "8 536 748 51 55"
+        }
+    ],
+    "PATLAMADAN KORUNMA DOKÜMANI HAZIRLAMA EĞİTİMİ": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1357 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "9 536 748 51 55"
+        }
+    ],
+    "MAKİNE İŞ EKİPMANLARI PERİYODİK KONTROL TEMEL EĞİTİMİ": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1359 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "11 536 748 51 55"
+        }
+    ],
+    "İŞ HİJYENİ ÖLÇÜMLERİ EĞİTİMİ": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1360 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "12 536 748 51 55"
+        }
+    ],
+    "ACİL DURUM KRİZ YÖNETİMİ EĞİTİMİ": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1361 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "13 536 748 51 55"
+        }
+    ],
+    "1. SEVİYE YANGIN EĞİTİMİ": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1363 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "15 536 748 51 55"
+        }
+    ],
+    "2. SEVİYE YANGIN EĞİTİMİ": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1364 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "16 536 748 51 55"
+        }
+    ],
+    "YÖNETİCİLER İÇİN İSG YÖNETİMİ EĞİTİMİ": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1365 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "17 536 748 51 55"
+        }
+    ],
+    "YÖNETİCİLER İÇİN İSG DENETİMİ EĞİTİMİ": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1366 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "18 536 748 51 55"
+        }
+    ],
+    "YETİŞKİN EĞİTİMİ": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1368 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "20 536 748 51 55"
+        }
+    ],
+    "ISO 9001:2015 KALİTE YÖNETİM SİSTEMİ TEMEL EĞİTİMİ": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1369 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "21 536 748 51 55"
+        }
+    ],
+    "ISO 45001:2018 İŞ SAĞLIĞI VE GÜVENLİĞİ YÖNETİM SİSTEMİ TEMEL EĞİTİMİ": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1370 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "22 536 748 51 55"
+        }
+    ],
+    "ISO 14001:2015 ÇEVRE YÖNETİM SİSTEMİ TEMEL EĞİTİMİ": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1371 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "23 536 748 51 55"
+        }
+    ],
+    "ENTEGRE YÖNETİM SİSTEMLERİ": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1372 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "24 536 748 51 55"
+        }
+    ],
+    "ENTEGRE YÖNETİM SİSTEMLERİ İÇ TETKİKÇİ EĞİTİMİ": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1373 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "25 536 748 51 55"
+        }
+    ],
+    "KAPALI KISITLI ALANDA ÇALIŞMA EĞİTİMİ": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1374 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "26 536 748 51 55"
+        }
+    ],
+    "KİMYASALLARLA GÜVENLİ ÇALIŞMA EĞİTİMİ": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1375 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "27 536 748 51 55"
+        }
+    ],
+    "TEHLİKELİ KİMYASALLARA MÜDAHALE EĞİTİMİ": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1376 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "28 536 748 51 55"
+        }
+    ],
+    "ISO_50001-2018_ENERJI_YONETIM_SISTEMI": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1377 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "29 536 748 51 55"
+        }
+    ],
+    "SÜRDÜRÜLEBİLİRLİK TEMEL KAVRAMLARI": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1378 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "30 536 748 51 55"
+        }
+    ],
+    "SÜRDÜRÜLEBİLİRLİK KALKINMA AMAÇLARI": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1379 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "31 536 748 51 55"
+        }
+    ],
+    "SÜREÇ BAZLI RİSK VE FIRSAT YÖNETİMİ": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1380 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "32 536 748 51 55"
+        }
+    ],
+    "TOPLAM KALİTE YÖNETİMİ EĞİTİMİ": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1381 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "33 536 748 51 55"
+        }
+    ],
+    "DEĞİŞİM YÖNETİMİ": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1382 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "34 536 748 51 55"
+        }
+    ],
+    "MINDFULNESS VE NEFES TEKNİKLERİ": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1383 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "35 536 748 51 55"
+        }
+    ],
+    "SWOT ANALİZİ": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1384 Sok. No:5/206 , KONAK, İZMİR",
+            "kisi": "-",
+            "telefon": "36 536 748 51 55"
+        }
+    ],
+    "YANGIN VE ACİL DURUM TATBİKATI EĞİTİMİ": [
+        {
+            "firma": "HÜLYAM OSGB",
+            "adres": "KEÇİLİKÖYOSB MAH.MALAZGİRT CAD. NO:4, YUNUSEMRE, MANİSA",
+            "kisi": "-",
+            "telefon": "0553 406 30 66"
+        }
+    ],
+    "İNŞAAT/MADEN": [
+        {
+            "firma": "SÖZ-1 İŞ SAĞLIĞI VE İŞ GÜVENLİĞİ",
+            "adres": "TOPÇUASIM MAH. 3519 SK. NO.3B YUNUSEMRE/MANİSA, YUNUSEMRE, MANİSA",
+            "kisi": "-",
+            "telefon": "0 555 698 25 55"
+        }
+    ],
+    "MADEN İŞLERİ DANIŞMANLIK": [
+        {
+            "firma": "SÖZ-1 OSGB MADEN İŞLERİ",
+            "adres": "Topçuasım Mah. 3519 Sok. No.3/B Yunusemre/MANİSA, Merkez, KÜTAHYA",
+            "kisi": "-",
+            "telefon": "0 505 700 15 95"
+        }
+    ],
+    "EĞİTİM VE DANIŞMANLIK": [
+        {
+            "firma": "MENDERES EĞİTİM VE DANIŞMANLIK",
+            "adres": "EFELER MH. ADNAN MENDERES BULV. NO: 234/A, DİDİM, AYDIN",
+            "kisi": "-",
+            "telefon": "5320690182"
+        }
+    ],
+    "Döngüsel Ekonomi, Sürdürülebilirlik ve Net Sıfır Karbon Yönetimi": [
+        {
+            "firma": "OMNİCON DANIŞMANLIK TİC. LTD. ŞTİ.",
+            "adres": "CUMHURİYET MAHALLESİ ŞİŞE CAM YOLU SOK. ARGE 11 NO:52 D:17, GEBZE, KOCAELİ",
+            "kisi": "-",
+            "telefon": "0 541 406 29 21"
+        }
+    ],
+    "TEHLİKELİ MADDE GÜVENLİK DANIŞMANLIĞI": [
+        {
+            "firma": "SARIZEYBEK TEHLİKELİ MADDE GÜVENLİK DANIŞMANLIĞI TİC. LTD.ŞTİ.",
+            "adres": "Akdeni̇z Mh. Gazi Bulvarı Gazi İşhanı No:66/201, Konak, İZMİR",
+            "kisi": "-",
+            "telefon": "0 552 664 40 35"
+        }
+    ],
+    "3. GÖZ SAHA DENETİM, TÜM TÜRKİYE SAHA DENETİM UZMANLIĞI HİZMETLERİ": [
+        {
+            "firma": "TETKİK DANIŞMANLIK İLKYARDIM EĞİTİM MERKEZİ",
+            "adres": "Yeşillik Cad. No:228-230 Kat:4 D:403 , Karabağlar, İZMİR",
+            "kisi": "-",
+            "telefon": "0 532 488 22 17"
+        }
+    ],
+    "Yönetim ve Sistem Danışmanlığı": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1348 Sok. No:5/206 , Konak , İZMİR",
+            "kisi": "-",
+            "telefon": "0 536 748 51 55"
+        }
+    ],
+    "ISO 9001 Kalite Yönetim Sistemi": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1349 Sok. No:5/206 , Konak , İZMİR",
+            "kisi": "-",
+            "telefon": "1 536 748 51 55"
+        }
+    ],
+    "ISO 14001 Çevre Yönetim Sistemi": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1350 Sok. No:5/206 , Konak , İZMİR",
+            "kisi": "-",
+            "telefon": "2 536 748 51 55"
+        }
+    ],
+    "ISO 45001 İş Sağlığı ve Güvenliği Yönetim Sistemi": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1351 Sok. No:5/206 , Konak , İZMİR",
+            "kisi": "-",
+            "telefon": "3 536 748 51 55"
+        }
+    ],
+    "Çevik Yönetim Sistemi": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1352 Sok. No:5/206 , Konak , İZMİR",
+            "kisi": "-",
+            "telefon": "4 536 748 51 55"
+        }
+    ],
+    "Holakratik Yönetim Modeli": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1353 Sok. No:5/206 , Konak , İZMİR",
+            "kisi": "-",
+            "telefon": "5 536 748 51 55"
+        }
+    ],
+    "Kaizen": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1354 Sok. No:5/206 , Konak , İZMİR",
+            "kisi": "-",
+            "telefon": "6 536 748 51 55"
+        }
+    ],
+    "İş Sağlığı ve Güvenliği Danışmanlığı": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1355 Sok. No:5/206 , Konak , İZMİR",
+            "kisi": "-",
+            "telefon": "7 536 748 51 55"
+        }
+    ],
+    "Kilitleme ve Etiketleme Sistem Kurulumu ve Denetlenmesi": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1356 Sok. No:5/206 , Konak , İZMİR",
+            "kisi": "-",
+            "telefon": "8 536 748 51 55"
+        }
+    ],
+    "Patlamadan Korunma Danışmalığı": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1357 Sok. No:5/206 , Konak , İZMİR",
+            "kisi": "-",
+            "telefon": "9 536 748 51 55"
+        }
+    ],
+    "Makine Emniyeti Danışmanlığı": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1358 Sok. No:5/206 , Konak , İZMİR",
+            "kisi": "-",
+            "telefon": "10 536 748 51 55"
+        }
+    ],
+    "Davranış Odaklı İş Sağlığı ve Güvenliği": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1359 Sok. No:5/206 , Konak , İZMİR",
+            "kisi": "-",
+            "telefon": "11 536 748 51 55"
+        }
+    ],
+    "Yangın Danışmanlığı": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1360 Sok. No:5/206 , Konak , İZMİR",
+            "kisi": "-",
+            "telefon": "12 536 748 51 55"
+        }
+    ],
+    "Yüksekte Çalışma ve Kurtarma Danışmanlığı": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1361 Sok. No:5/206 , Konak , İZMİR",
+            "kisi": "-",
+            "telefon": "13 536 748 51 55"
+        }
+    ],
+    "Yasal Mevzuata Uygunluk Gözetimleri": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1362 Sok. No:5/206 , Konak , İZMİR",
+            "kisi": "-",
+            "telefon": "14 536 748 51 55"
+        }
+    ],
+    "Karbon Ayak İzi Hesaplama, Raporlanma ve Danışmanlığı": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1348 Sok. No:5/206, Konak, İzmir",
+            "kisi": "-",
+            "telefon": "0 546 441 90 51"
+        }
+    ],
+    "Su Ayak İzi Hesaplama, Raporlanma ve Danışmanlığı": [
+        {
+            "firma": "ARKETİP GLOBAL",
+            "adres": "1349 Sok. No:5/206, Konak, İzmir",
+            "kisi": "-",
+            "telefon": "1 546 441 90 51"
+        }
+    ],
+    "ÇEVRE DANIŞMANLIK HİZMETLERİ": [
+        {
+            "firma": "SARIZEYBEK ÇEVRE VE EĞİTİM HİZ. SAN. TİC. LTD. ŞTİ.",
+            "adres": "İsmet Kaptan Mh. Gazi̇ Bulvarı Gürsel İş Hanı No:86 K:1/106, Konak, İZMİR",
+            "kisi": "-",
+            "telefon": "0 532 504 90 15"
+        }
+    ]
+};
 
-        document.getElementById('faaliyet-alani').addEventListener('change', function () {
-            const selected = this.value;
-            const table = document.getElementById('bilgi-tablosu');
-            const tbody = document.getElementById('bilgi-icerigi');
+        const faaliyetSelect = document.getElementById('faaliyet-alani');
+        const table = document.getElementById('bilgi-tablosu');
+        const tbody = document.getElementById('bilgi-icerigi');
 
+        // Populate dropdown options dynamically
+        Object.keys(data).forEach(category => {
+            const option = document.createElement('option');
+            option.value = category;
+            option.textContent = category;
+            faaliyetSelect.appendChild(option);
+        });
+
+        // Display table data based on selection
+        faaliyetSelect.addEventListener('change', function () {
             tbody.innerHTML = ""; // Clear previous rows
 
-            if (data[selected]) {
-                data[selected].forEach(item => {
+            if (data[this.value]) {
+                data[this.value].forEach(item => {
                     const row = document.createElement('tr');
                     row.innerHTML = `
                         <td>${item.firma}</td>
