@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kooperatif Bilgi Sistemi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        select, table {
+            width: 100%;
+            margin: 10px 0;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background: #f4f4f9;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Kooperatif Bilgi Sistemi</h1>
+        <p>Faaliyet alanını seçerek ilgili bilgileri görüntüleyin.</p>
+        <label for="faaliyet-alani">Faaliyet Alanı:</label>
+        <select id="faaliyet-alani">
+            <option value="">-- Seçiniz --</option>
+            <option value="ilkyardim">İlkyardım Hizmetleri</option>
+            <option value="egitim">Eğitim Hizmetleri</option>
+            <option value="teknik">Teknik Kontroller</option>
+            <option value="danismanlik">Danışmanlık Hizmetleri</option>
+        </select>
+        <table id="bilgi-tablosu" class="hidden">
+            <thead>
+                <tr>
+                    <th>Firma</th>
+                    <th>Adres</th>
+                    <th>Koordinasyon Kişisi</th>
+                    <th>Telefon</th>
+                </tr>
+            </thead>
+            <tbody id="bilgi-icerigi">
+                <!-- Dinamik içerik buraya yüklenecek -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const data = {
+            "ilkyardim": [
+                {"firma": "TETKİK OSGB", "adres": "Yeşillik Cad. No:228-230 Kat:4 D:403, İzmir", "kisi": "Hakan Ferhatoğlu", "telefon": "0 532 488 22 17"},
+                {"firma": "ARKETİP OSGB", "adres": "1348 Sok. No:5/206, Konak, İzmir", "kisi": "Murat Can Erim", "telefon": "0 507 657 83 67"}
+            ],
+            "egitim": [
+                {"firma": "SARIZEYBEK BELGELENDİRME", "adres": "Gazi Bulvarı, İzmir", "kisi": "Mizgin Alpboğa", "telefon": "0 549 489 84 88"}
+            ],
+            "teknik": [
+                {"firma": "GÜÇBİRLİĞİ MÜHENDİSLİK", "adres": "Konak, İzmir", "kisi": "-", "telefon": "-"}
+            ],
+            "danismanlik": [
+                {"firma": "TETKİK DANIŞMANLIK", "adres": "Yeşillik Cad. No:228-230 Kat:4 D:403, İzmir", "kisi": "Hakan Ferhatoğlu", "telefon": "0 532 488 22 17"}
+            ]
+        };
+
+        document.getElementById('faaliyet-alani').addEventListener('change', function () {
+            const selected = this.value;
+            const table = document.getElementById('bilgi-tablosu');
+            const tbody = document.getElementById('bilgi-icerigi');
+
+            tbody.innerHTML = ""; // Clear previous rows
+
+            if (data[selected]) {
+                data[selected].forEach(item => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${item.firma}</td>
+                        <td>${item.adres}</td>
+                        <td>${item.kisi}</td>
+                        <td>${item.telefon}</td>
+                    `;
+                    tbody.appendChild(row);
+                });
+                table.classList.remove('hidden');
+            } else {
+                table.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
